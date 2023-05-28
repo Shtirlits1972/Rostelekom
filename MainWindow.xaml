@@ -1,0 +1,38 @@
+﻿<Window x:Class="Rostelekom.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Rostelekom"
+        mc:Ignorable="d"
+        WindowStartupLocation="CenterScreen"
+        Title="Ростелеком" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="400*"/>
+        </Grid.RowDefinitions>
+
+        <DockPanel Height="35" VerticalAlignment="Top" Grid.Row="0"  x:Name="MainMeun" Margin="0,0,0,0">
+            <Menu IsMainMenu="True" VerticalAlignment="Top" VerticalContentAlignment="Top"   DockPanel.Dock="Top" Height="30" Margin="0,0,0,0">
+                <MenuItem Header="Справочники" x:Name="MenuReferences" Padding="10,0,10,15"  >
+                    <MenuItem Header="Должности" x:Name="PositionPageBtn"   Click="PositionPageBtn_Click"   ></MenuItem>
+                    <MenuItem Header="Типы оборудования" x:Name="EquipmentTypesPageBtn"   Click="EquipmentTypesPageBtn_Click"  ></MenuItem>
+                    <MenuItem Header="Статус заявки" x:Name="StatusRequestPageBtn"   Click="StatusRequestPageBtn_Click"></MenuItem>
+                    <MenuItem Header="Поставщики" x:Name="SuppliersPageBtn"   Click="SuppliersPageBtn_Click"></MenuItem>
+                    <MenuItem Header="Оборудование" x:Name="EquipmentPageBtn"   Click="EquipmentPageBtn_Click"></MenuItem>
+                </MenuItem>
+                
+                <MenuItem Header="Сотрудники" x:Name="MenuEmployees" Padding="10,0,10,15" Click="MenuEmployees_Click"  />
+                <MenuItem Header="Заявки на комплектацию" x:Name="MenuRequestKitPage" Padding="10,0,10,15" Click="MenuRequestKitPage_Click"  />
+                <MenuItem Header="Инвентаризация" x:Name="MenuInventoryPage" Padding="10,0,10,15" Click="MenuInventoryPage_Click"  />
+
+            </Menu>
+        </DockPanel>
+        
+
+        <DockPanel Grid.Row="1" >
+            <Frame NavigationUIVisibility="Automatic" Name="frmContent" Source="Forms/ScreenPage.xaml" />
+        </DockPanel>
+    </Grid>
+</Window>
